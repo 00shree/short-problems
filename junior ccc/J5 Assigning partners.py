@@ -1,5 +1,5 @@
 bad_pairs = False
-good_pairs = True
+good_pairs = False
 pairs = {}
 
 num = int(input("enter number of students: "))
@@ -13,17 +13,36 @@ for char in first_split:
     index1 = first_split.index(char)
     index2 = second_split[index1]
 
-    pairs.update({char: index2})
+    pairs.update({char:index2})
+
+##print(pairs)
 
 for person in first_split:
+##    print(x,partner)
     partner = pairs[person]
+    reverse_pair = second_split[partner]
 
-    if partner == person or pairs[partner] != person:
-        good_pairs = False
-        break
+    
+    if (partner == person)or(reverse_pair == person):
+        bad_pairs = (True)
+    else:
+        good_pairs = (True)
 
 
-if good_pairs:
+if (good_pairs == True):
     print("good")
-else:
+elif (bad_pairs == True):
     print("bad")
+        
+
+    
+    
+    
+
+    
+        
+    
+
+
+
+        
